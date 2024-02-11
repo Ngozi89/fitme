@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-f(&2a%01%3a%j=vc3^vx@p-l$la&3d2_3d&#2qfwss=mtab-r)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-ngozi89-fitme-apxl5jjudna.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['8000-ngozi89-fitme-rn5bdpsct4e.ws-eu108.gitpod.io']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,10 @@ ROOT_URLCONF = 'fitme.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'templates', 'allauth')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
