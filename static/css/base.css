@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,600;1,400&display=swap');
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+
+/* Nav */
+.logo-img {
+    height: 50px;
+    margin-left: 40px;
+}
+
+#account {
+    margin-left: 880px;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+    
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--dark-red) !important;
+}
+
+/* End Nav */
+
 /* Style hero page */
 .btn-red {
     background-color: var(--red);

@@ -1,0 +1,83 @@
+{% load static %}
+<header class="container-fluid">
+    <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <a href="{% url 'home' %}" class="nav-link">
+                <img src="{% static 'images/logo.jpg' %}" alt="Image of gym equipment" class="logo-img">
+                <h2 class="logo-font text-red my-0"><strong>FitMe</strong> Gym</h2>
+            </a>
+        </div>
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                <li class="list-inline-item dropdown">
+                    <a class="text-black nav-link" href="#" id="account-options" aria-haspopup="true" aria-expanded="false"
+                        data-bs-toggle="dropdown">
+                        <div class="text-center">
+                            <div><i class="fas fa-user fa-lg" id="account" aria-hidden="true"></i></div>
+                            <p class="my-0" id="account">My Account</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="account-options">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="" class="dropdown-item">A</a>
+                        {% endif %}
+                        <a href="" class="dropdown-item">P</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row px-3">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <button class="navbar-toggler collapsed" type="button" aria-controls="nav" aria-expanded="false"
+                aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="navbar-collapse collapse" id="nav">
+                <ul class="navbar-nav w-auto mx-auto">
+                    <li class="nav-item d-block d-md-none">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="our-equipments" aria-haspopup="true"
+                            aria-expanded="false" data-bs-toggle="dropdown">Membership</a>
+                    
+                    </li>
+                    <li class="nav-item">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="training-tips" aria-haspopup="true"
+                            aria-expanded="false" data-bs-toggle="dropdown">TrainingTips</a>
+                  
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="group-trainig" aria-haspopup="true"
+                            aria-expanded="false" data-bs-toggle="dropdown">Group Training</a>
+                    </li>
+                   <li class="nav-item">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'tips' %}">Training Tips</a>
+                    <li class="nav-item dropdown">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'support' %}" id="service-link" aria-haspopup="true"
+                            aria-expanded="false" data-bs-toggle="dropdown">
+                            Customer Service
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'privacy' %}">Privacy Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
