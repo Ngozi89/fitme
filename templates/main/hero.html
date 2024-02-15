@@ -1,26 +1,18 @@
 {% load static %}
+    <div class="container">
+        <div class="row mt-2 custom-border justify-content-center align-items-center">
+            <div class="col-12 col-md-5 p-4 d-flex align-items-center">
+                <div class="text-container d-flex flex-column align-items-left">
+                    <h2 class="hero-text text-left">It's time to create moments of happiness, get stronger, and discover your strength at <span class="text-red">FitMe</span></h2>
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    fiting
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Sub</a>
-                    </h4>
+                    <p>where fitness meets passion and possibility. A place to revolutionize your health and well-being, promote longevity and enhance the quality of life through dynamic fitness.</p>
+                    <div>
+                        <a class="btn btn-red btn-lg text-brown hero-btn" href="">Join Now</a>
+                    </div>
                 </div>
+            </div>
+            <div class="col-12 col-md-7 mt-3 d-flex justify-content-center">
+                <img class=" hero-image img-fluid" src="{% static 'images/hero-img.jpeg' %}" alt="Gym">
             </div>
         </div>
     </div>
-{% endblock %}
