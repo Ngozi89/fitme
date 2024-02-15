@@ -21,3 +21,8 @@ def tips_page(request):
 def support_page(request):
     ''' Renders customer support page '''
     return render(request, 'home/support.html')    
+
+
+def privacy_page(request):
+    ''' Renders customer support page '''
+    return render(request, 'home/privacy.html')
