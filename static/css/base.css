@@ -17,6 +17,7 @@ body {
 
 #account {
     margin-left: 880px;
+    color: black;
 }
 
 .navbar-nav .nav-link {
@@ -46,7 +47,9 @@ body {
     -webkit-box-shadow: 1px 9px 26px -4px rgba(0, 0, 0, 0.66);
 }
 
-
+.bg-red {
+    background-color: var(--red);
+}
 .custom-border {
     border: var(--red) 1px solid;
     border-radius: 20px;

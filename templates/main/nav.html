@@ -1,5 +1,14 @@
 {% load static %}
 <header class="container-fluid">
+    <!-- Membership offer -->
+    <div id="become-member" class="row text-center">
+        <div class="col bg-red text-white">
+            <h4 class="logo-font my-1">A LOT OF TRAINING. LOW PRICE. Train from $9 a month!</h4>
+        </div>
+    </div>
+    <!-- End Membership offer -->
+
+    <!-- Fitme logo -->
     <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
             <a href="{% url 'home' %}" class="nav-link">
@@ -7,6 +16,7 @@
                 <h2 class="logo-font text-red my-0"><strong>FitMe</strong> Gym</h2>
             </a>
         </div>
+        <!-- End fitme logo -->
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
             <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                 <li class="list-inline-item dropdown">
@@ -20,9 +30,9 @@
                     <div class="dropdown-menu border-0" aria-labelledby="account-options">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
-                        <a href="" class="dropdown-item">A</a>
+                        <a href="#" class="dropdown-item">A</a>
                         {% endif %}
-                        <a href="" class="dropdown-item">P</a>
+                        <a href="#" class="dropdown-item">P</a>
                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                         {% else %}
                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -30,51 +40,80 @@
                         {% endif %}
                     </div>
                 </li>
+<!-- End account -->
             </ul>
         </div>
     </div>
+
+
     <div class="row px-3">
         <nav class="navbar navbar-expand-lg navbar-light w-100">
-            <button class="navbar-toggler collapsed" type="button" aria-controls="nav" aria-expanded="false"
-                aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="nav">
+
+            <button class="navbar-toggler collapsed" type="button" aria-controls="main-nav" aria-expanded="false"
+                aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#main-nav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-           
-            <div class="navbar-collapse collapse" id="nav">
+
+            <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+         
+                <li class="list-inline-item dropdown">
+                    <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" aria-haspopup="true" aria-expanded="false"
+                        data-bs-toggle="dropdown">
+                        <div class="text-center">
+                            <div><i class="fas fa-user fa-lg" id="account" aria-hidden="true"></i></div>
+                            <p class="my-0" id="account">My Account</p>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a href="#" class="dropdown-item">A</a>
+                        {% endif %}
+                        <a href="#" class="dropdown-item">P</a>
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                    </div>
+                </li>
+                
+            </ul>
+            <div class="navbar-collapse collapse" id="main-nav">
                 <ul class="navbar-nav w-auto mx-auto">
+
                     <li class="nav-item d-block d-md-none">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-3" href="{% url 'home' %}" id="home-link">
                             Home
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="our-equipments" aria-haspopup="true"
+                        <a class="logo-font font-weight-bold nav-link text-black mr-3" href="#" id="membership-link" aria-haspopup="true"
                             aria-expanded="false" data-bs-toggle="dropdown">Membership</a>
-                    
-                    </li>
-                    <li class="nav-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="training-tips" aria-haspopup="true"
-                            aria-expanded="false" data-bs-toggle="dropdown">TrainingTips</a>
-                  
+                        <div class="dropdown-menu border-0" aria-labelledby="membership-link">
+                            <a href="{% url 'membership' %}" class="dropdown-item">All Members</a>
+                            <a href="#" class="dropdown-item ">Student</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="group-trainig" aria-haspopup="true"
-                            aria-expanded="false" data-bs-toggle="dropdown">Group Training</a>
+
+                  <li class="nav-item dropdown">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-3" href="#" id="tips-link" aria-haspopup="true"
+                            aria-expanded="false" data-bs-toggle="dropdown">Training Tips</a>
+                        <div class="dropdown-menu border-0" aria-labelledby="children-link">
+                            <a href="{% url 'tips' %}?genre=group" class="dropdown-item">Group</a>
+                            <a href="{% url 'tips' %}?genre=instructor" class="dropdown-item">Person Insreuctor</a>
+                        </div>
                     </li>
-                   <li class="nav-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'tips' %}">Training Tips</a>
-                    <li class="nav-item dropdown">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'support' %}" id="service-link" aria-haspopup="true"
-                            aria-expanded="false" data-bs-toggle="dropdown">
-                            Customer Service
-                        </a>
+               
+                    <li class="nav-item">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-3" href="{% url 'support' %}">Customer Service</a>
                     </li>
                     <li class="nav-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'privacy' %}">Privacy Policy</a>
+                        <a class="logo-font font-weight-bold nav-link text-black mr-3" href="{% url 'about' %}">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}">About Us</a>
+                    
+                 <li class="nav-item">
+                        <a class="logo-font font-weight-bold nav-link text-black mr-3" href="{% url 'privacy' %}">Privacy Policy</a>
                     </li>
                 </ul>
             </div>

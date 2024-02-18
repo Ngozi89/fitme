@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
 # Home page
 def home(request):
     '''
@@ -13,10 +13,16 @@ def about_page(request):
     '''A view to Renders About us page '''
     return render(request, 'home/about.html')
 
-#
+# Membership page
+def membership_page(request):
+    ''' Renders membership page '''
+    return render(request, 'home/membership.html')
+
+
 def tips_page(request):
     ''' Renders training tips page '''
     return render(request, 'home/tips.html')
+
 
 def support_page(request):
     ''' Renders customer support page '''
@@ -24,5 +30,5 @@ def support_page(request):
 
 
 def privacy_page(request):
-    ''' Renders customer support page '''
+    ''' Renders privacy policy page '''
     return render(request, 'home/privacy.html')
