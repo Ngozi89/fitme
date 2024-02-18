@@ -72,6 +72,15 @@ body {
 }
 /* End hero page */
 
+.accordion-button:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: var(--red);
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-button:focus {
+    border-color: var(--dark-red) !important;
+}
 
 footer {
     background-color: var(--red);

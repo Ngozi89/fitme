@@ -1,7 +1,96 @@
 {% extends 'base.html' %}
-{% load static %}
 {% block title %}
 Training Tips
 {% endblock title %}
 {% block content %}
-{% endblock %}
+<section class="tips">
+    <div class="container">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Taining Tips</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <p>Training sessions for your training pleasure
+Have you just started training? Or driven for a while but the inspiration has started to wear off? Of course, we want to help so that your motivation can flourish again. Here we share training sessions that can boost your training.</p>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <strong>Group training with us</strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p><strong>Group:</strong><br>
+                                    Working out is fun, but working out together is even more fun. Feel the music and unleash your energy together with our enthusiastic instructors. At FitMe we offer group training sessions.
+
+Whether you want to get stronger, faster or perhaps more mobile, there is a session for you. We are constantly working on developing our group training and there are always new exciting group training sessions.</p>
+                                <p>Why should I try group training?</p>
+                                <p>There are many advantages to group training and it is above all the community with other members that makes many people appreciate this form of training. Exercising together in a group is not only fun, it also increases performance according to several studies.
+
+For those who find it difficult to find the inspiration for training, group training can be a good start. Here you don't have to think about what to do, just follow the instructor's instructions. If you are a person who often cancels training at the last minute, group training can also be a smart thing to try. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <strong>Training online</strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>Everyone is different and we want to offer online training that suits everyone, regardless of who you are and what your goals are. We have different exercises and sessions with different orientations - We have Intense Mobility, the focus is on mobility and improving your training technique. We start with a lighter warm-up and then continue with 3 blocks where we suggestively increase the degree of difficulty.
+
+<br>
+
+A classic yoga session of a total of 30 minutes which, with the help of movements and breathing exercises, makes you find your inner peace even online.
+
+<br>
+Abdominal exercises
+We have some simple but effective abdominal exercises to do at home.
+
+We are developing even more content. Stay up to date in all our by signing up to our news weekly</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                <strong>Personal Instructor</strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>here</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                <strong>Membership</strong>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>You will need a VISA, VISA Debit, MasterCard or Maestro card. All payments
+                                    are&nbsp;made in dollars.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
