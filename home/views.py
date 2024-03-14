@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from .forms import MemberForm
+from .models import Member
 
 
 # Home page
@@ -8,15 +11,25 @@ def home(request):
     '''
     return render(request, 'home/index.html')
 
+# Membership page
+def membership(request):
+    if request.method == 'POST':
+        form = MemberForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['memb_name']
+            email = form.cleaned_data['memb_email']
+
+            memb = Member.objects.create(memb_name=name, memb_email=email)
+
+            memb.save()
+            return HttpResponse("Congratulation on your fitness journey")
+    form = MemberForm()
+    return render(request, 'home/membership.html', {'form': form})
+
 # About page
 def about_page(request):
     '''A view to Renders About us page '''
     return render(request, 'home/about.html')
-
-# Membership page
-def membership_page(request):
-    ''' Renders membership page '''
-    return render(request, 'home/membership.html')
 
 
 def tips_page(request):
